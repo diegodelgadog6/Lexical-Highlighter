@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#define MAX_SIZE 100
+
+// This is a single-line comment
+
+/*
+   This is a multi-line comment
+   that spans several lines
+*/
+
+int main() {
+    int x = 42;
+    float pi = 3.14;
+    char letter = 'A';
+    bool flag = true;
+    unsigned long count = 0xFF;
+    double result = 1e10;
+    string name = "Hello World";
+
+    if (x > 10 && flag != false) {
+        x += 5;
+        cout << "Value: " << x << endl;
+    } else {
+        x -= 2;
+    }
+
+    for (int i = 0; i <= MAX_SIZE; i++) {
+        result = result * 2 + i;
+    }
+
+    while (x != 0) {
+        x--;
+    }
+
+    do {
+        count++;
+    } while (count < 100);
+
+    switch (x) {
+        case 0:
+            return 0;
+        default:
+            break;
+    }
+
+    return 0;
+}
