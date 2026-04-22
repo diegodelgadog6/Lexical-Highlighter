@@ -18,7 +18,7 @@ categories = [
   { name: "loop",         regex: /\b(for|while|do)\b/,                                            style: "color:#757575; background-color:#eeeeee;" },
   { name: "keyword",      regex: /\b(auto|break|case|const|continue|default|else|enum|extern|goto|if|inline|friend|namespace|class|template|try|catch|throw|new|delete|using|virtual|public|private|protected|operator|this|register|return|sizeof|static|struct|switch|typedef|union|void|volatile|cout|cin|endl|printf|scanf|main)\b/, style: "color:#1565c0; font-weight:bold;" },
   { name: "number",       regex: /\b0[xX][0-9a-fA-F]+\b|\b0[0-7]+\b|\b[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?\b/, style: "color:#b71c1c;" },
-  { name: "operator",     regex: /\+\+|--|<<|>>|&&|\|\||[+\-*\/%]=?|[!=<>]=|[&|^~=]/,            style: "color:#c2185b; font-weight:bold;" },
+  { name: "operator",     regex: /\+\+|--|<<|>>|&&|\|\||[+\-*\/%]=?|[!=<>]=|[&|^~=<>]/,            style: "color:#c2185b; font-weight:bold;" },
 ]
 
 # Build one combined regex with named groups

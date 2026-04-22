@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lexical Analyzer Output</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            padding: 30px;
+        }
+        pre {
+            background-color: #252526;
+            border: 1px solid #3c3c3c;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .legend {
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+        .legend span {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>C++ Syntax Highlighter - Lexical Analyzer</h1>
+    <div class="legend">
+        <span style="color:#2e7d32;">&#9608; Comments</span>
+        <span style="color:#1565c0;">&#9608; Keywords</span>
+        <span style="color:#6a1b9a;">&#9608; Data Types</span>
+        <span style="color:#e65100;">&#9608; Strings</span>
+        <span style="color:#b71c1c;">&#9608; Numbers</span>
+        <span style="color:#f9a825;">&#9608; Booleans</span>
+        <span style="color:#c2185b;">&#9608; Operators</span>
+        <span style="color:#00838f;">&#9608; Preprocessor</span>
+        <span style="color:#757575;">&#9608; Loops</span>
+    </div>
+    <pre><span style="color:#00838f; background-color:#e0f7fa;">#include &lt;iostream&gt;</span>
+<span style="color:#00838f; background-color:#e0f7fa;">#include &lt;string&gt;</span>
+<span style="color:#00838f; background-color:#e0f7fa;">#define MAX_SIZE 100</span>
+
+<span style="color:#2e7d32; font-style:italic;">// This is a single-line comment</span>
+
+<span style="color:#2e7d32; font-style:italic;">/*
+   This is a multi-line comment
+   that spans several lines
+*/</span>
+
+<span style="color:#6a1b9a; font-weight:bold; font-style:italic;">int</span> <span style="color:#1565c0; font-weight:bold;">main</span>() {
+    <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">int</span> x <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#b71c1c;">42</span>;
+    <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">float</span> pi <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#b71c1c;">3.14</span>;
+    <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">char</span> letter <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#e65100;">'A'</span>;
+    <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">bool</span> flag <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#f9a825; font-weight:bold;">true</span>;
+    <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">unsigned</span> <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">long</span> count <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#b71c1c;">0xFF</span>;
+    <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">double</span> result <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#b71c1c;">1e10</span>;
+    <span style="color:#6a1b9a; font-weight:bold; font-style:italic;">string</span> name <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#e65100;">"Hello World"</span>;
+
+    <span style="color:#1565c0; font-weight:bold;">if</span> (x &gt; <span style="color:#b71c1c;">10</span> <span style="color:#c2185b; font-weight:bold;">&amp;&amp;</span> flag <span style="color:#c2185b; font-weight:bold;">!=</span> <span style="color:#f9a825; font-weight:bold;">false</span>) {
+        x <span style="color:#c2185b; font-weight:bold;">+=</span> <span style="color:#b71c1c;">5</span>;
+        <span style="color:#1565c0; font-weight:bold;">cout</span> <span style="color:#c2185b; font-weight:bold;">&lt;&lt;</span> <span style="color:#e65100;">"Value: "</span> <span style="color:#c2185b; font-weight:bold;">&lt;&lt;</span> x <span style="color:#c2185b; font-weight:bold;">&lt;&lt;</span> <span style="color:#1565c0; font-weight:bold;">endl</span>;
+    } <span style="color:#1565c0; font-weight:bold;">else</span> {
+        x <span style="color:#c2185b; font-weight:bold;">-=</span> <span style="color:#b71c1c;">2</span>;
+    }
+
+    <span style="color:#757575; background-color:#eeeeee;">for</span> (<span style="color:#6a1b9a; font-weight:bold; font-style:italic;">int</span> i <span style="color:#c2185b; font-weight:bold;">=</span> <span style="color:#b71c1c;">0</span>; i <span style="color:#c2185b; font-weight:bold;">&lt;=</span> MAX_SIZE; i<span style="color:#c2185b; font-weight:bold;">++</span>) {
+        result <span style="color:#c2185b; font-weight:bold;">=</span> result <span style="color:#c2185b; font-weight:bold;">*</span> <span style="color:#b71c1c;">2</span> <span style="color:#c2185b; font-weight:bold;">+</span> i;
+    }
+
+    <span style="color:#757575; background-color:#eeeeee;">while</span> (x <span style="color:#c2185b; font-weight:bold;">!=</span> <span style="color:#b71c1c;">0</span>) {
+        x<span style="color:#c2185b; font-weight:bold;">--</span>;
+    }
+
+    <span style="color:#757575; background-color:#eeeeee;">do</span> {
+        count<span style="color:#c2185b; font-weight:bold;">++</span>;
+    } <span style="color:#757575; background-color:#eeeeee;">while</span> (count &lt; <span style="color:#b71c1c;">100</span>);
+
+    <span style="color:#1565c0; font-weight:bold;">switch</span> (x) {
+        <span style="color:#1565c0; font-weight:bold;">case</span> <span style="color:#b71c1c;">0</span>:
+            <span style="color:#1565c0; font-weight:bold;">return</span> <span style="color:#b71c1c;">0</span>;
+        <span style="color:#1565c0; font-weight:bold;">default</span>:
+            <span style="color:#1565c0; font-weight:bold;">break</span>;
+    }
+
+    <span style="color:#1565c0; font-weight:bold;">return</span> <span style="color:#b71c1c;">0</span>;
+}</pre>
+</body>
+</html>
